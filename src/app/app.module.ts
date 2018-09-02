@@ -8,6 +8,10 @@ import { PostsComponent } from './posts/posts.component';
 import { UsersComponent } from './users/users.component';
 import { DetailsComponent } from './details/details.component';
 import { HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule, MatCardModule, MatSidenavModule, MatCheckboxModule  } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,12 @@ import { HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatCardModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

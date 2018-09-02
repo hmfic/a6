@@ -19,3 +19,33 @@ nav > ul > li > a{
 nav > ul > li > a .active {
 	background-color: #00a8ff;
 }
+
+/* .example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} */
+
+.example-container {
+	position: absolute;
+	top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f88f8;
+}
+
+.example-sidenav-content{
+	margin:2rem;
+}
+
+.example-sidenav {
+	background-color: lightgray;
+}
+
+.topleft {
+	top:0;
+	left:0;
+}
