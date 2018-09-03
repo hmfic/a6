@@ -10,7 +10,10 @@ import { DetailsComponent } from './details/details.component';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatButtonModule, MatCardModule, MatSidenavModule, MatCheckboxModule  } from '@angular/material';
+import {  MatButtonModule, MatCardModule, MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatListModule, MatMenuModule, MatDialogModule } from '@angular/material';
+import { MenubarComponent } from './menubar/menubar.component';
+import { MysettingsmodalComponent } from './mysettingsmodal/mysettingsmodal.component';
+//import { CourseDialogComponent } from './course-dialog/course-dialog.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { MatButtonModule, MatCardModule, MatSidenavModule, MatCheckboxModule  } 
     SidebarComponent,
     PostsComponent,
     UsersComponent,
-    DetailsComponent
+    DetailsComponent,
+    MenubarComponent,
+    MysettingsmodalComponent,
+    //CourseDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +35,14 @@ import { MatButtonModule, MatCardModule, MatSidenavModule, MatCheckboxModule  } 
     MatButtonModule, 
     MatCheckboxModule,
     MatCardModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ MysettingsmodalComponent ]
 })
 export class AppModule { }

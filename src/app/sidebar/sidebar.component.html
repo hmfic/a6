@@ -1,97 +1,31 @@
-<!-- <nav>
-	<ul>
-		<li>
-			<a routerLink="">
-				<i class="material-icons">supervised_user_circle</i>
+
+<mat-sidenav-container autosize (backdropClick)="drawer.toggle()" hasBackdrop>
+
+  <mat-sidenav #drawer class="sidenav-contents" mode="side" [(opened)]="opened">
+
+	<mat-list>
+		 <mat-list-item> 
+		 	<a routerLink="" class="sidenav-links">
+				<button mat-button>
+					<i class="material-icons">supervised_user_circle</i> Users
+				</button>
+			</a> 
+		 </mat-list-item>
+		 <mat-list-item> 
+		 	<a routerLink="posts" class="sidenav-links" >
+		 		<button mat-button>
+					<i class="material-icons">message</i> Posts
+				</button>
 			</a>
-		</li>
-		<li>
-			<a routerLink="posts">
-				<i class="material-icons">message</i>
-			</a>
-		</li>
-	</ul>
-</nav> 
-
-<mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened>Drawer content</mat-drawer>
-  <mat-drawer-content>Main content</mat-drawer-content>
-</mat-drawer-container>
-
-==========
-
-<mat-sidenav-container class="example-container" *ngIf="shouldRun">
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
-               (closed)="events.push('close!')">
-    Sidenav content
+	 	 </mat-list-item>
+	</mat-list>
   </mat-sidenav>
-
-  <mat-sidenav-content>
-    <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
-    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
-    <p>Events:</p>
-    <div class="example-events">
-      <div *ngFor="let e of events">{{e}}</div>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
-============
-
-
-<mat-sidenav-container class="example-container">
-  <mat-sidenav mode="side" opened>Navigation</mat-sidenav>
-  <mat-sidenav-content>
-  	<p>
-	  	<a routerLink="">
-			<i class="material-icons">supervised_user_circle</i>
-		</a>
-	</p>
-	<p>
-		<a routerLink="posts">
-			<i class="material-icons">message</i>
-		</a>
-	</p>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
-
-	<mat-sidenav-container class="example-container" *ngIf="shouldRun">
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
-               (closed)="events.push('close!')">
-    Sidenav content
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
-    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
-    <p>Events:</p>
-    <div class="example-events">
-      <div *ngFor="let e of events">{{e}}</div>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-	-->
-
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <a routerLink="">
-		<i class="material-icons">supervised_user_circle</i>
-	</a>
-	<br>
-	<a routerLink="posts">
-		<i class="material-icons">message</i>
-	</a>
-  </mat-drawer>
-
-  <div class="example-sidenav-content">
-
-	    <button type="button" mat-button (click)="drawer.toggle()">
-	    	<i class="material-icons">menu</i>
-	    </button>
-
-      
-      <router-outlet></router-outlet>
-  </div>
-  <!-- <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content> -->
-</mat-drawer-container>
+  <button type="button" mat-flat-button (click)="drawer.toggle()" color="accent">
+	    	<i *ngIf="!opened" class="material-icons">chevron_right</i>
+	    	<i *ngIf="opened" class="material-icons">chevron_left</i>
+	    		NAVIGATION
+  </button>
+  <mat-sidenav-container class="drawer-contents">
+      	<router-outlet></router-outlet>
+  </mat-sidenav-container>
+</mat-sidenav-container> 
