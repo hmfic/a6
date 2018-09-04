@@ -9,11 +9,10 @@ import { UsersComponent } from './users/users.component';
 import { DetailsComponent } from './details/details.component';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MatCheckboxModule } from '@angular/material/checkbox';
-import {  MatButtonModule, MatCardModule, MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatListModule, MatMenuModule, MatDialogModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatSidenavModule, MatCheckboxModule, MatToolbarModule, MatListModule, MatMenuModule, MatDialogModule, MatFormFieldModule } from '@angular/material';
 import { MenubarComponent } from './menubar/menubar.component';
-import { MysettingsmodalComponent } from './mysettingsmodal/mysettingsmodal.component';
-//import { CourseDialogComponent } from './course-dialog/course-dialog.component';
+import { jmodalComponent } from './jmodal/jmodal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,8 +23,8 @@ import { MysettingsmodalComponent } from './mysettingsmodal/mysettingsmodal.comp
     UsersComponent,
     DetailsComponent,
     MenubarComponent,
-    MysettingsmodalComponent,
-    //CourseDialogComponent
+    jmodalComponent,
+//    SyssettingsmodalComponent
   ],
   imports: [
     BrowserModule,
@@ -39,10 +38,12 @@ import { MysettingsmodalComponent } from './mysettingsmodal/mysettingsmodal.comp
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ MysettingsmodalComponent ]
+  entryComponents: [ jmodalComponent ]
 })
 export class AppModule { }
